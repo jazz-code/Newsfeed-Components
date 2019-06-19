@@ -12,3 +12,7 @@ const menuButton = document.querySelector('.menu-button')
 menuButton.addEventListener('click', () => toggleMenu()  )
 
 console.log('click', toggleMenu)
+
+//GSAP
+
+TweenMax.to('.menu', 5, {left:200})
