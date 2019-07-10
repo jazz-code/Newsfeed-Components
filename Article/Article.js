@@ -38,7 +38,7 @@ class Article {
 // articles.forEach(function(article) {
 //   return new Article(article);
 // })
-
+// div class acorrdion
 /* <div class="articles">
       <div class="article">
         <h2>Lambda School Students: "We're the best!"</h2>
@@ -161,13 +161,28 @@ class Article {
       </div>
     </div> */
 
-const articles = document.querySelector(".articles");
+const accordion = document.querySelector(".accordion");
 
 function createArticles() {
   const article = document.createElement("div");
+  const articlePanel = document.createElement("div");
   const articleTitle = document.createElement("h2");
-  const articleParagraph = document.createElement("p");
+  const articleContent = document.createElement("p");
   const buttonContainer = document.createElement("div");
   const buttonOpen = document.createElement("button");
   const buttonClose = document.createElement("button");
+
+  article.appendChild(articlePanel);
+  article.appendChild(articleContent);
+  articlePanel.appendChild(articleTitle);
+  articlePanel.appendChild(buttonContainer);
+  buttonContainer.appendChild(buttonOpen);
+  buttonContainer.appendChild(buttonClose);
+
+  article.classList.add("articles");
+  articlePanel.classList.add("article");
+  buttonContainer.classList.add("buttons");
+  buttonOpen.classList.add("expand-button");
+  buttonClose.classList.add("closeButton", "hide-btn");
+  articleContent.classList.add("article-content");
 }
