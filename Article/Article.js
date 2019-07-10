@@ -175,6 +175,10 @@ const panelData = [
 
 const accordion = document.querySelector(".accordion");
 
+panelData.forEach(el => {
+  accordion.appendChild(createArticles(el.title, el.content));
+});
+
 function createArticles(title, content) {
   const article = document.createElement("div");
   const articlePanel = document.createElement("div");
@@ -198,5 +202,16 @@ function createArticles(title, content) {
   buttonClose.classList.add("closeButton", "hide-btn");
   articleContent.classList.add("article-content");
 
-  return article;
+  buttonOpen.textContent = "Expand";
+  buttonClose.textContent = "Close";
+  articleContent.textContent = "content";
+  articleTitle.textContent = "title";
+
+  buttonContainer.addEventListener("click", () => {
+    buttonOpen.classList.toggle("hide-btn");
+    buttonClose.classList.toggle("hide-btn");
+    articleContent.classList.toggle("article-open");
+  });
+
+  return articles;
 }
