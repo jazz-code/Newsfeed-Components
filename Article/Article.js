@@ -161,21 +161,20 @@ class Article {
       </div>
     </div> */
 
-const panelData = [
+const articleData = [
   {
     title: "Lambda School Students: We're the best!",
     content:
       "Lucas ipsum dolor sit amet ben twi lek padmé darth darth darth moff hutt organa twi lek. Ben amidala secura skywalker lando."
   },
-  { title: "", content: "" },
-  { title: "", content: "" },
-  { title: "", content: "" },
-  { title: "", content: "" }
+  { title: "Javascript and You, ES6", content: "" },
+  { title: "React vs Angular vs Vue", content: "" },
+  { title: "Another Article", content: "" }
 ];
 
 const articles = document.querySelector(".articles");
 
-panelData.forEach(el => {
+articleData.forEach(el => {
   articles.appendChild(createArticles(el.title, el.content));
 });
 
@@ -197,15 +196,15 @@ function createArticles(title, content) {
 
   article.classList.add("articles");
   articlePanel.classList.add("article");
+  articleContent.classList.add("article-content");
   buttonContainer.classList.add("buttons");
   buttonOpen.classList.add("expand-button");
   buttonClose.classList.add("closeButton", "hide-btn");
-  articleContent.classList.add("article-content");
 
   buttonOpen.textContent = "expand";
   buttonClose.textContent = "close";
-  articleContent.textContent = "content";
-  articleTitle.textContent = "title";
+  articleContent.textContent = content;
+  articleTitle.textContent = title;
 
   buttonContainer.addEventListener("click", () => {
     buttonOpen.classList.toggle("hide-btn");
