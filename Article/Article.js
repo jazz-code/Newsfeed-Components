@@ -161,9 +161,21 @@ class Article {
       </div>
     </div> */
 
+const panelData = [
+  {
+    title: "Lambda School Students: We're the best!",
+    content:
+      "Lucas ipsum dolor sit amet ben twi lek padmé darth darth darth moff hutt organa twi lek. Ben amidala secura skywalker lando."
+  },
+  { title: "", content: "" },
+  { title: "", content: "" },
+  { title: "", content: "" },
+  { title: "", content: "" }
+];
+
 const accordion = document.querySelector(".accordion");
 
-function createArticles() {
+function createArticles(title, content) {
   const article = document.createElement("div");
   const articlePanel = document.createElement("div");
   const articleTitle = document.createElement("h2");
@@ -185,4 +197,6 @@ function createArticles() {
   buttonOpen.classList.add("expand-button");
   buttonClose.classList.add("closeButton", "hide-btn");
   articleContent.classList.add("article-content");
+
+  return article;
 }
