@@ -173,10 +173,10 @@ const panelData = [
   { title: "", content: "" }
 ];
 
-const accordion = document.querySelector(".accordion");
+const articles = document.querySelector(".articles");
 
 panelData.forEach(el => {
-  accordion.appendChild(createArticles(el.title, el.content));
+  articles.appendChild(createArticles(el.title, el.content));
 });
 
 function createArticles(title, content) {
@@ -202,8 +202,8 @@ function createArticles(title, content) {
   buttonClose.classList.add("closeButton", "hide-btn");
   articleContent.classList.add("article-content");
 
-  buttonOpen.textContent = "Expand";
-  buttonClose.textContent = "Close";
+  buttonOpen.textContent = "expand";
+  buttonClose.textContent = "close";
   articleContent.textContent = "content";
   articleTitle.textContent = "title";
 
@@ -213,5 +213,5 @@ function createArticles(title, content) {
     articleContent.classList.toggle("article-open");
   });
 
-  return articles;
+  return article;
 }
