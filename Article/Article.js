@@ -163,9 +163,9 @@ class Article {
 
 const articleData = [
   {
-    title: "Lambda School Students: We're the best!",
-    content:
-      "Lucas ipsum dolor sit amet ben twi lek padmé darth darth darth moff hutt organa twi lek. Ben amidala secura skywalker lando."
+    title: `Lambda School Students: We're the best!`,
+    date: `Nov 5th, 2017`,
+    content: `Lucas ipsum dolor sit amet ben twi lek padmé darth darth darth moff hutt organa twi lek. Ben amidala secura skywalker lando.`
   },
   { title: "Javascript and You, ES6", content: "" },
   { title: "React vs Angular vs Vue", content: "" },
@@ -175,10 +175,10 @@ const articleData = [
 const articles = document.querySelector(".articles");
 
 articleData.forEach(el => {
-  articles.appendChild(createArticles(el.title, el.content));
+  articles.appendChild(createArticles(el.title, el.content, el.date));
 });
 
-function createArticles(title, content) {
+function createArticles(title, content, date) {
   const article = document.createElement("div");
   const articleTitle = document.createElement("h2");
   const articleDate = document.createElement("p");
@@ -197,6 +197,7 @@ function createArticles(title, content) {
   articleButton.textContent = "Expand";
   articleContent.textContent = content;
   articleTitle.textContent = title;
+  articleDate.textContent = date;
 
   articleButton.addEventListener("click", () => {
     articleContent.classList.toggle("article-open");
