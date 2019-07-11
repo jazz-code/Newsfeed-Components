@@ -185,9 +185,9 @@ function createArticles(title, content, date) {
   const articleContent = document.createElement("p");
   const articleButton = document.createElement("button");
 
-  article.appendChild(articleContent);
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
+  article.appendChild(articleContent);
   article.appendChild(articleButton);
 
   article.classList.add("article");
