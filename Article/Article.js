@@ -183,32 +183,21 @@ function createArticles(title, content) {
   const articlePanel = document.createElement("div");
   const articleTitle = document.createElement("h2");
   const articleContent = document.createElement("p");
-  const buttonContainer = document.createElement("div");
-  const buttonOpen = document.createElement("button");
-  const buttonClose = document.createElement("button");
+  const expandButton = document.createElement("button");
 
   article.appendChild(articlePanel);
   article.appendChild(articleContent);
-  articlePanel.appendChild(articleTitle);
-  articlePanel.appendChild(buttonContainer);
-  buttonContainer.appendChild(buttonOpen);
-  buttonContainer.appendChild(buttonClose);
+  article.appendChild(articleTitle);
+  article.appendChild(expandButton);
 
-  article.classList.add("articles");
-  articlePanel.classList.add("article");
-  articleContent.classList.add("article-content");
-  buttonContainer.classList.add("buttons");
-  buttonOpen.classList.add("expand-button");
-  buttonClose.classList.add("closeButton", "hide-btn");
+  article.classList.add("article");
+  expandButton.classList.add("expandButton");
 
-  buttonOpen.textContent = "expand";
-  buttonClose.textContent = "close";
+  expandButton.textContent = "Expand";
   articleContent.textContent = content;
   articleTitle.textContent = title;
 
-  buttonContainer.addEventListener("click", () => {
-    buttonOpen.classList.toggle("hide-btn");
-    buttonClose.classList.toggle("hide-btn");
+  expandButton.addEventListener("click", () => {
     articleContent.classList.toggle("article-open");
   });
 
