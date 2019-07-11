@@ -180,24 +180,25 @@ articleData.forEach(el => {
 
 function createArticles(title, content) {
   const article = document.createElement("div");
-  const articlePanel = document.createElement("div");
   const articleTitle = document.createElement("h2");
+  const articleDate = document.createElement("p");
   const articleContent = document.createElement("p");
-  const expandButton = document.createElement("button");
+  const articleButton = document.createElement("button");
 
-  article.appendChild(articlePanel);
   article.appendChild(articleContent);
   article.appendChild(articleTitle);
-  article.appendChild(expandButton);
+  article.appendChild(articleDate);
+  article.appendChild(articleButton);
 
   article.classList.add("article");
-  expandButton.classList.add("expandButton");
+  articleDate.classList.add("date");
+  articleButton.classList.add("expandButton");
 
-  expandButton.textContent = "Expand";
+  articleButton.textContent = "Expand";
   articleContent.textContent = content;
   articleTitle.textContent = title;
 
-  expandButton.addEventListener("click", () => {
+  articleButton.addEventListener("click", () => {
     articleContent.classList.toggle("article-open");
   });
 
